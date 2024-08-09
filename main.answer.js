@@ -14,13 +14,28 @@
 // Function to calculate total medals for each country
 
 function calculateTotalMedals(countries) {
-
-//enter in your code 
+  return countries.map(({ country, gold, silver, bronze }) => ({
+      country,
+      totalMedals: gold + silver + bronze
+  }));
 }
+
+export { calculateTotalMedals };
+
+// User code to input countries and calculate medals
+const countries = [
+    { country: "USA", gold: 10, silver: 5, bronze: 7 },
+    { country: "Great Britian ", gold: 8, silver: 10, bronze: 5 }
+];
+
+// Calling the function with the countries array
+const result = calculateTotalMedals(countries);
+
+// Output the result
+console.log(result);
 
 // Named export
 export { calculateTotalMedals };
-
 
 
 
